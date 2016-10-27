@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+<button id="btnHtml" ng-click="myFuncHTML()">HTML</button>
+<button id="btnJava" ng-click="myFuncJAVA()">JAVA</button>
+<button id="btnCSS" ng-click="myFuncCSS()">CSS</button>
+
+<div ng-show="showHTML">
+    <h1>HTML</h1>
+</div>
+<div ng-show="showJAVA">
+    <h1>JAVA</h1>
+</div>
+<div ng-show="showCSS">
+    <h1>CSS</h1>
+</div>
+
+
+
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="javascripts/AngularVisible.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">

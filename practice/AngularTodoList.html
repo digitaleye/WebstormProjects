@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="myApp" >
+
+
+<div ng-controller="myController2">
+
+    <input type="text" id="inputTodo" ng-model="todo">
+    <button id="btnInput" ng-click="addToList()">Add to Todo List</button>
+    <br>
+    <br>
+
+    <div  ng-repeat="l in list">
+
+        <input type="checkbox" ng-click="selectFromList($index)">Select from List To Remove</input> {{l}}
+
+    </div>
+
+    <button style='width:300px;Height:30px;'ng-click="RemoveFromList()">Remove from List</button>
+
+
+</div>
+
+<br/>
+<br/>
+<br/>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="AngularTodoList.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</html>

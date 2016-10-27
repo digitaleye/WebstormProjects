@@ -1,0 +1,46 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<div ng-app="myApp" ng-controller="controller">
+    <input type=text ng-model="todoInput">
+    <button ng-click="addTodo()">Add Todo</button>
+    <div  ng-repeat="l in list">
+
+        <input type="checkbox" ng-click="selectFromList($index)">Select from List To Remove</input> {{l}}
+
+    </div>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('controller', function($scope, todoFactory) {
+
+        $scope.list=todoFactory.getList();
+
+        $scope.addTodo = function(){
+            todoFactory.add($scope.todoInput)
+        };
+
+    });
+    app.factory('todoFactory', function(){
+        var _todoList = [];
+
+        return{
+            add: function(list){
+                _todoList = _todoList + list;
+                console.log('added and new list = ' + _todoList)
+
+            },
+            remove: function(index){
+                _todoList.splice(index, 1)
+                console.log('removed and new list = ' + _todoList)
+            },
+            getList: function(){
+                return _todoList;
+            }
+        }
+    })
+
+
+</script>
+
+</html>
